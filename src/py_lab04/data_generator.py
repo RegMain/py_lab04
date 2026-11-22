@@ -36,7 +36,7 @@ class DataGenerator:
             raise TypeError(
                 f"Expected {int}, got {type(seed)} instead.\n"
             )
-        if seed:
+        if seed is not None:
             self.__seed = seed
         else:
             self.__seed = time.time_ns()
@@ -56,8 +56,7 @@ class DataGenerator:
                 )
             for data_bounds in bounds:
                 data_bounds.check()
-        self.__rng = random.Random()
-        self.__rng.seed(self.__seed)
+        self.__rng = random.Random(self.__seed)
 
     def get_seed(self) -> int:
         return self.__seed
