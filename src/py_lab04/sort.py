@@ -1,5 +1,6 @@
 
-from typing import Callable
+from collections.abc import Callable
+
 
 def insertion_sort(values: list, key: Callable | None = None, reverse: bool = False) -> None:
     if not isinstance(values, list):

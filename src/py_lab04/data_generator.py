@@ -1,8 +1,9 @@
-from dataclasses import dataclass
 import random
 import time
-from typing import Callable
+from collections.abc import Callable
 from copy import deepcopy
+from dataclasses import dataclass
+
 
 @dataclass
 class DataBounds:
@@ -116,7 +117,7 @@ class DataGenerator:
     def get_sorted_data(self, size: int, data_type: type, key: Callable | None = None, reverse: bool = False) -> list:
         if not isinstance(key, Callable) and key is not None:
             raise TypeError(
-                f"Given key is not callable.\n"
+                "Given key is not callable.\n"
             )
         return sorted(self.get_random_data(size, data_type), key=key, reverse=reverse)
 

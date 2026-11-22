@@ -1,11 +1,8 @@
-from typing import Callable
-
-from py_lab04.data_generator import DataGenerator, DataBounds
-
-import time
-
 import signal
+import time
+from collections.abc import Callable
 
+from py_lab04.data_generator import DataBounds, DataGenerator
 from py_lab04.sort import insertion_sort, quick_sort
 
 NS_IN_S: int = 1_000_000_000
